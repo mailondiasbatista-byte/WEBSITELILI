@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-script: 'Pinyon Script', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0B0609;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: var(--font-serif);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+/* Custom Rose Gold & Champagne Gradient Animations */
+@keyframes roseGoldGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 14px rgba(244, 114, 182, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 28px rgba(251, 113, 133, 0.75));
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+.animate-rosegold-glow {
+  animation: roseGoldGlow 3.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatParticle 5s ease-in-out infinite;
+}
+
+/* Text & Background Gradients */
+.bg-rosegold-gradient {
+  background: linear-gradient(135deg, #FECDD3 0%, #FB7185 35%, #E11D48 70%, #9F1239 100%);
+}
+
+.bg-champagne-rose {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 20%, #FECDD3 50%, #F472B6 100%);
+}
+
+.text-rosegold-gradient {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FDA4AF 30%, #FB7185 60%, #F43F5E 85%, #E11D48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-champagne-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass Panels & Borders */
+.rosegold-glass-panel {
+  background: rgba(20, 10, 16, 0.82);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 113, 133, 0.25);
+}
+
+.rosegold-glass-panel:hover {
+  border-color: rgba(244, 63, 94, 0.55);
+  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0609;
+}
+::-webkit-scrollbar-thumb {
+  background: #381322;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fb7185;
+}

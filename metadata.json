@@ -1,0 +1,6 @@
+{
+  "name": "Ulili Tranças — Studio Profissional de Tranças & Alongamento",
+  "description": "Beleza, estilo e autoestima em cada trança. Tranças tradicionais, modernas e com alongamento em El Kheir. Agendamento online e contato direto via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
