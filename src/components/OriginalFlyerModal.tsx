@@ -19,25 +19,28 @@ export const OriginalFlyerModal: React.FC<OriginalFlyerModalProps> = ({ isOpen, 
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative max-w-4xl w-full bg-[#12080E] border border-rose-500/50 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
+          className="relative max-w-4xl w-full bg-[#12070E] rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 text-slate-400 hover:text-white p-2.5 rounded-full bg-zinc-900 border border-zinc-800 z-10"
+            className="absolute top-5 right-5 text-slate-400 hover:text-white p-2.5 rounded-full bg-zinc-900 z-10"
           >
             <X className="w-5 h-5" />
           </button>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            {/* Left: Image */}
+            {/* Left: Flyer Image */}
             <div className="md:col-span-6 flex justify-center">
-              <div className="relative rounded-2xl overflow-hidden border-2 border-rose-500/40 shadow-2xl max-h-[600px] group">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl max-h-[600px] group">
                 <img
                   src={SALON_INFO.originalFlyerUrl}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200';
+                  }}
                   alt="Panfleto Oficial Ulili Tranças Original"
-                  className="w-full h-auto object-contain rounded-xl"
+                  className="w-full h-auto object-contain rounded-2xl"
                 />
               </div>
             </div>
@@ -52,21 +55,21 @@ export const OriginalFlyerModal: React.FC<OriginalFlyerModalProps> = ({ isOpen, 
               </div>
 
               <p className="text-xs text-slate-300 leading-relaxed">
-                Todas as informações, contatos, destaques e diferenciais do panfleto foram fidelizados ao website com interatividade e animações.
+                Todas as informações, serviços e contatos do panfleto foram reproduzidos no site.
               </p>
 
-              <div className="space-y-2.5 text-xs text-slate-300 bg-zinc-950 p-4 rounded-2xl border border-rose-500/20">
+              <div className="space-y-2.5 text-xs text-slate-300 bg-zinc-950 p-5 rounded-2xl shadow-inner">
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                   <span><strong>Slogan:</strong> Beleza, estilo e autoestima em cada trança!</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <span><strong>Especialidade:</strong> TRANÇAS com alongamento</span>
+                  <span><strong>Destaque:</strong> TRANÇAS com alongamento (sintético ou natural)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <span><strong>Estilos:</strong> Tradicionais & Modernas (boho, goddess, fulani, etc.)</span>
+                  <span><strong>Estilos:</strong> Tranças tradicionais & Tranças modernas</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
@@ -78,7 +81,7 @@ export const OriginalFlyerModal: React.FC<OriginalFlyerModalProps> = ({ isOpen, 
                 </div>
                 <div className="flex items-start gap-2">
                   <Phone className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <span><strong>Contato:</strong> {SALON_INFO.phone}</span>
+                  <span><strong>Contacto:</strong> {SALON_INFO.phone}</span>
                 </div>
               </div>
 
@@ -88,7 +91,7 @@ export const OriginalFlyerModal: React.FC<OriginalFlyerModalProps> = ({ isOpen, 
                   whileTap={{ scale: 0.98 }}
                   href={SALON_INFO.originalFlyerUrl}
                   download="Ulili_Trancas_Flyer.jpeg"
-                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 to-pink-600 rounded-2xl transition-all shadow-lg flex items-center justify-center gap-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>Baixar Panfleto Imagem</span>

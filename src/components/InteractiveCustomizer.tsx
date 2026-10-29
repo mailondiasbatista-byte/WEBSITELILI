@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Sliders, Sparkles, Check, MessageCircle, Crown, Info, Heart } from 'lucide-react';
+import { Sliders, Sparkles, Check, MessageCircle, Crown, Info } from 'lucide-react';
 import { BRAID_STYLES, EXTENSION_OPTIONS, ACCESSORY_OPTIONS, LENGTH_OPTIONS, SALON_INFO } from '../data/salonData';
 
 interface InteractiveCustomizerProps {
@@ -39,12 +39,12 @@ Gostaria de agendar o meu horário!`;
   };
 
   return (
-    <section id="personalizar" className="py-24 bg-gradient-to-b from-[#0B0609] via-[#12080F] to-[#0B0609] relative border-t border-rose-500/20">
+    <section id="personalizar" className="py-24 bg-gradient-to-b from-[#090407] via-[#12070E] to-[#090407] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-950/50 border border-rose-500/30 text-rose-200 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-950/80 text-rose-200 text-xs font-bold tracking-wider uppercase shadow-lg">
             <Sliders className="w-3.5 h-3.5 text-rose-400" />
             <span>Simulador Interativo Ulili</span>
           </div>
@@ -59,7 +59,7 @@ Gostaria de agendar o meu horário!`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Controls Column */}
-          <div className="lg:col-span-7 space-y-8 bg-zinc-950/70 p-6 sm:p-8 rounded-3xl border border-rose-500/20 backdrop-blur-md">
+          <div className="lg:col-span-7 space-y-8 bg-zinc-950/90 p-6 sm:p-8 rounded-3xl backdrop-blur-md shadow-2xl">
             
             {/* Step 1: Style */}
             <div className="space-y-3">
@@ -72,10 +72,10 @@ Gostaria de agendar o meu horário!`;
                   <button
                     key={style.id}
                     onClick={() => setSelectedStyleId(style.id)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all ${
+                    className={`p-3.5 rounded-2xl text-left transition-all ${
                       selectedStyleId === style.id
-                        ? 'bg-rose-950/80 border-rose-400 text-rose-100 shadow-md'
-                        : 'bg-zinc-900/60 border-zinc-800 text-slate-300 hover:border-rose-500/30'
+                        ? 'bg-rose-950 text-rose-100 font-bold shadow-lg shadow-rose-950/50'
+                        : 'bg-zinc-900/80 text-slate-300 hover:bg-zinc-900'
                     }`}
                   >
                     <span className="block font-bold text-xs truncate">{style.name}</span>
@@ -85,7 +85,7 @@ Gostaria de agendar o meu horário!`;
               </div>
             </div>
 
-            {/* Step 2: Extension Material */}
+            {/* Step 2: Extension */}
             <div className="space-y-3">
               <label className="text-xs font-bold text-rose-300 uppercase tracking-widest flex items-center gap-2">
                 <span className="w-5 h-5 rounded-full bg-rose-500 text-white flex items-center justify-center text-[10px] font-black">2</span>
@@ -96,10 +96,10 @@ Gostaria de agendar o meu horário!`;
                   <button
                     key={ext.id}
                     onClick={() => setSelectedExtensionId(ext.id)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all ${
+                    className={`p-3.5 rounded-2xl text-left transition-all ${
                       selectedExtensionId === ext.id
-                        ? 'bg-rose-950/80 border-rose-400 text-rose-100 shadow-md'
-                        : 'bg-zinc-900/60 border-zinc-800 text-slate-300 hover:border-rose-500/30'
+                        ? 'bg-rose-950 text-rose-100 font-bold shadow-lg'
+                        : 'bg-zinc-900/80 text-slate-300 hover:bg-zinc-900'
                     }`}
                   >
                     <span className="block font-bold text-xs">{ext.name}</span>
@@ -120,10 +120,10 @@ Gostaria de agendar o meu horário!`;
                   <button
                     key={len.id}
                     onClick={() => setSelectedLengthId(len.id)}
-                    className={`p-3.5 rounded-2xl border text-left transition-all ${
+                    className={`p-3.5 rounded-2xl text-left transition-all ${
                       selectedLengthId === len.id
-                        ? 'bg-rose-950/80 border-rose-400 text-rose-100'
-                        : 'bg-zinc-900/60 border-zinc-800 text-slate-300 hover:border-rose-500/30'
+                        ? 'bg-rose-950 text-rose-100 font-bold shadow-lg'
+                        : 'bg-zinc-900/80 text-slate-300 hover:bg-zinc-900'
                     }`}
                   >
                     <span className="block font-bold text-xs">{len.label}</span>
@@ -145,10 +145,10 @@ Gostaria de agendar o meu horário!`;
                     <button
                       key={acc}
                       onClick={() => toggleAccessory(acc)}
-                      className={`px-3.5 py-2 text-xs font-medium rounded-xl border transition-all flex items-center gap-2 ${
+                      className={`px-4 py-2.5 text-xs font-medium rounded-2xl transition-all flex items-center gap-2 ${
                         isSelected
-                          ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white border-rose-400 font-bold'
-                          : 'bg-zinc-900/60 border-zinc-800 text-slate-300 hover:border-rose-500/30'
+                          ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold shadow-lg'
+                          : 'bg-zinc-900 text-slate-300 hover:bg-zinc-800'
                       }`}
                     >
                       {isSelected && <Check className="w-3.5 h-3.5" />}
@@ -161,28 +161,26 @@ Gostaria de agendar o meu horário!`;
 
           </div>
 
-          {/* Real-Time Preview Summary Column */}
+          {/* Real-Time Preview Summary */}
           <div className="lg:col-span-5 sticky top-28">
             <motion.div
               layout
-              className="p-6 sm:p-8 rounded-3xl bg-[#12080E] border-2 border-rose-500/40 shadow-2xl space-y-6 relative overflow-hidden"
+              className="p-6 sm:p-8 rounded-3xl bg-[#12070E] shadow-2xl space-y-6 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-36 h-36 bg-rose-500/15 rounded-full blur-2xl pointer-events-none" />
-
-              <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
+              <div className="flex items-center justify-between pb-4 border-b border-zinc-900">
                 <div className="flex items-center gap-2">
                   <Crown className="w-5 h-5 text-rose-300" />
                   <h3 className="font-cinzel text-lg font-bold text-white">
                     Resumo do Seu Estilo
                   </h3>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-200 bg-rose-950 border border-rose-500/40 px-2.5 py-1 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-200 bg-rose-950 px-3 py-1 rounded-lg">
                   El Kheir Studio
                 </span>
               </div>
 
               {/* Photo Preview Thumbnail */}
-              <div className="aspect-[16/9] rounded-2xl overflow-hidden relative border border-rose-500/30">
+              <div className="aspect-[16/9] rounded-2xl overflow-hidden relative shadow-lg">
                 <img
                   src={currentStyle.image}
                   alt={currentStyle.name}
@@ -194,8 +192,8 @@ Gostaria de agendar o meu horário!`;
                 </span>
               </div>
 
-              {/* Specs Breakdown */}
-              <div className="space-y-2.5 text-xs text-slate-300 bg-zinc-950 p-4 rounded-2xl border border-zinc-900">
+              {/* Specs */}
+              <div className="space-y-2.5 text-xs text-slate-300 bg-zinc-950 p-4 rounded-2xl">
                 <div className="flex justify-between">
                   <span className="text-slate-400">Modelo Selecionado:</span>
                   <span className="font-bold text-rose-200">{currentStyle.name}</span>
@@ -231,19 +229,19 @@ Gostaria de agendar o meu horário!`;
                     length: currentLength,
                     accessories: selectedAccessories
                   })}
-                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:from-rose-600 hover:to-pink-500 rounded-2xl transition-all shadow-lg shadow-rose-500/30"
+                  className="w-full py-4 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 rounded-2xl transition-all shadow-xl shadow-rose-500/30"
                 >
-                  Confirmar Agendamento Deste Estilo
+                  Agende já o seu horário!
                 </motion.button>
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={handleSendToWhatsApp}
-                  className="w-full py-3 text-xs font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 hover:bg-emerald-950 rounded-2xl transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-emerald-300 bg-emerald-950/70 hover:bg-emerald-950 rounded-2xl transition-all flex items-center justify-center gap-2 shadow-md"
                 >
                   <MessageCircle className="w-4 h-4 text-emerald-400" />
-                  <span>Enviar Especificações Via WhatsApp</span>
+                  <span>Enviar especificações via WhatsApp</span>
                 </motion.button>
               </div>
 

@@ -9,7 +9,7 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #0B0609;
+    background-color: #070305;
     color: #F8FAFC;
     overflow-x: hidden;
   }
@@ -23,13 +23,13 @@
   }
 }
 
-/* Custom Rose Gold & Champagne Gradient Animations */
+/* Custom Rose Gold & Gold Glow Animations */
 @keyframes roseGoldGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 14px rgba(244, 114, 182, 0.45));
+    filter: drop-shadow(0 0 16px rgba(244, 114, 182, 0.4));
   }
   50% {
-    filter: drop-shadow(0 0 28px rgba(251, 113, 133, 0.75));
+    filter: drop-shadow(0 0 32px rgba(251, 113, 133, 0.7));
   }
 }
 
@@ -38,7 +38,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(3deg);
+    transform: translateY(-10px) rotate(2deg);
   }
 }
 
@@ -50,37 +50,29 @@
   animation: floatParticle 5s ease-in-out infinite;
 }
 
-/* Text & Background Gradients */
-.bg-rosegold-gradient {
-  background: linear-gradient(135deg, #FECDD3 0%, #FB7185 35%, #E11D48 70%, #9F1239 100%);
-}
-
-.bg-champagne-rose {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 20%, #FECDD3 50%, #F472B6 100%);
-}
-
+/* Text Gradients */
 .text-rosegold-gradient {
-  background: linear-gradient(135deg, #FFF1F2 0%, #FDA4AF 30%, #FB7185 60%, #F43F5E 85%, #E11D48 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FECDD3 25%, #FB7185 60%, #F43F5E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-champagne-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 50%, #F59E0B 100%);
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FBBF24 40%, #F59E0B 80%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glass Panels & Borders */
+/* Borderless Glass Panels */
 .rosegold-glass-panel {
-  background: rgba(20, 10, 16, 0.82);
+  background: rgba(18, 8, 14, 0.85);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(251, 113, 133, 0.25);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(244, 63, 94, 0.12);
 }
 
 .rosegold-glass-panel:hover {
-  border-color: rgba(244, 63, 94, 0.55);
-  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.25);
+  background: rgba(26, 12, 20, 0.92);
+  box-shadow: 0 20px 45px -10px rgba(244, 63, 94, 0.25);
 }
 
 /* Custom Scrollbar */
@@ -88,10 +80,10 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0609;
+  background: #070305;
 }
 ::-webkit-scrollbar-thumb {
-  background: #381322;
+  background: #250C16;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

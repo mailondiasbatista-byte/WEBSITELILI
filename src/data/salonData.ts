@@ -8,147 +8,161 @@ export const SALON_INFO = {
   fullLocation: 'El Kheir, Salão VIP Ulili Tranças',
   phone: '+212 719 684 150',
   whatsappRaw: '212719684150',
-  values: ['QUALIDADE', 'BELEZA', 'ESTILO', 'CONFIANÇA'],
-  originalFlyerUrl: '/assets/aistudio/WhatsApp_Image_2026-10-28_at_19.42.31_a52be956.jpeg',
-  heroMainImage: '/src/assets/images/ulili_hero_braids_1793213132640.jpg',
+  originalFlyerUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200',
+  heroMainImage: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=1200',
   workingHours: [
     { days: 'Segunda a Sábado', hours: '09:00 - 19:30' },
     { days: 'Domingo', hours: '10:00 - 17:00 (Com agendamento prévio)' }
   ]
 };
 
+/* Exact 6 items verbatim from the flyer */
 export const SALON_PILLARS: SalonPillar[] = [
   {
     id: '1',
     title: 'Tranças Tradicionais',
-    subtitle: 'De Raiz, Box Braids, Nagô e Clássicas',
+    subtitle: 'de raiz, box braids, nagô, etc.',
     iconName: 'Crown',
-    description: 'Técnicas de trançado ancestrais e perfeitas. Divisões simétricas e precisas que protegem e valorizam o crescimento natural dos seus fios.'
+    description: 'Técnicas de trançado ancestrais e impecáveis. Divisões simétricas e perfeitas que protegem e valorizam a saúde dos seus fios.'
   },
   {
     id: '2',
     title: 'Tranças Modernas',
-    subtitle: 'Boho Braids, Goddess, Fulani & Trend Styles',
+    subtitle: 'boho, goddess, fulani, etc.',
     iconName: 'Sparkles',
-    description: 'Estilos contemporâneos combinando mechas cacheadas, acessórios dourados e designs orgânicos de alta tendência.'
+    description: 'Estilos contemporâneos combinando mechas cacheadas, adereços dourados e penteados de alta tendência para você brilhar.'
   },
   {
     id: '3',
     title: 'Com Alongamento',
-    subtitle: 'Cabelo Sintético Premium ou Natural',
+    subtitle: 'cabelo sintético ou natural',
     iconName: 'Feather',
-    description: 'Adicione comprimento e volume com materiais ultraleves e hipoalergênicos que não pesam na raiz nem sensibilizam o couro cabeludo.'
+    description: 'Adicione comprimento e volume com fibras ultraleves que garantem movimento natural e zero tração dolorosa no couro cabeludo.'
   },
   {
     id: '4',
     title: 'Acabamento Impecável',
-    subtitle: 'Modelagem de Baby Hair e Selagem Térmica',
+    subtitle: 'Modelagem de baby hair & selagem perfeita',
     iconName: 'Scissors',
-    description: 'Finalização profissional rigorosa com pontas alinhadas, baby hair estilizado e pomada modeladora de fixação limpa.'
+    description: 'Finalização profissional minuciosa com baby hair estilizado, pontas seladas e alinhamento milimétrico de cada trança.'
   },
   {
     id: '5',
     title: 'Higiene e Mais Segurança',
-    subtitle: 'Biossegurança & Materiais Esterilizados',
+    subtitle: 'Biossegurança total & materiais higienizados',
     iconName: 'ShieldCheck',
-    description: 'Ambiente climatizado, materiais desinfetados individualmente para cada cliente e protocolo sanitário completo.'
+    description: 'Ambiente preparado, materiais desinfetados para cada cliente e protocolo de biossegurança rigoroso do início ao fim.'
   },
   {
     id: '6',
-    title: 'Diversos Estilos & Acabamentos',
-    subtitle: 'Personalização Total de Fios e Acessórios',
+    title: 'Diversos Estilos e Acabamentos',
+    subtitle: 'Anéis, miçangas, borboletas & fios dourados',
     iconName: 'Gem',
-    description: 'Personalize o tom, o comprimento, a espessura e os adereços (anéis dourados, fios de ouro, borboletas, missangas).'
+    description: 'Personalização completa com adereços dourados, miçangas tradicionais, presilhas e acabamentos sob medida para a sua beleza.'
   }
 ];
 
+/* Expanded Catalog featuring Black women showcasing all braid styles matching the flyer photos */
 export const BRAID_STYLES: BraidStyle[] = [
   {
     id: 'fulani-royal',
-    name: 'Tranças Fulani de Luxo',
+    name: 'Tranças Fulani com Acessórios Dourados',
     category: 'modernas',
-    description: 'Design tradicional Fulani com trança central, tranças laterais invertidas, adornadas com anéis e missangas douradas e baby hair perfeitamente desenhado.',
-    image: '/src/assets/images/ulili_hero_braids_1793213132640.jpg',
+    description: 'Estilo autêntico Fulani com trança central, tranças laterais em padrão geométrico, adereços dourados, miçangas e baby hair estilizado.',
+    image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=1200',
     duration: '4h - 5h',
     priceEstimate: 'A partir de 350 MAD',
     recommendedHairType: 'Todos os tipos de cabelo',
     maintenanceWeeks: '6 a 8 semanas',
     popularWithExtensions: true,
-    features: ['Inclui acessórios dourados', 'Com alongamento', 'Baby hair estilizado', 'Design autoral']
+    features: ['Anéis e anéis dourados', 'Com alongamento', 'Baby hair estilizado', 'Padrão Fulani autoral']
   },
   {
     id: 'boho-goddess',
-    name: 'Boho Goddess Braids',
+    name: 'Boho Goddess Braids (Tranças Modernas)',
     category: 'modernas',
-    description: 'A combinação perfeita de tranças finas com mechas onduladas soltas ao longo de todo o comprimento. Estilo leve, volumoso e super praiano.',
-    image: '/src/assets/images/ulili_boho_goddess_1793213132594.jpg',
+    description: 'Combinação perfeita de tranças finas com mechas cacheadas soltas em todo o comprimento. Leveza, volume natural e movimento sem igual.',
+    image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=1200',
     duration: '5h - 6h',
     priceEstimate: 'A partir de 420 MAD',
     recommendedHairType: 'Crespos e Cacheados (3A a 4C)',
     maintenanceWeeks: '6 a 8 semanas',
     popularWithExtensions: true,
-    features: ['Mechas cacheadas orgânicas', 'Super leve', 'Visual praiano/chic', 'Excelente durabilidade']
-  },
-  {
-    id: 'box-braids-alongamento',
-    name: 'Box Braids Tradicionais com Alongamento',
-    category: 'tradicionais',
-    description: 'Quadrados geométricos impecáveis com fibra sintética de alta densidade. Pode ser estilizado em coques, rabos de cavalo e penteados diversos.',
-    image: '/src/assets/images/ulili_box_braids_1793213132698.jpg',
-    duration: '4h - 6h',
-    priceEstimate: 'A partir de 380 MAD',
-    recommendedHairType: 'Todos os tipos de fios',
-    maintenanceWeeks: '8 a 10 semanas',
-    popularWithExtensions: true,
-    features: ['Divisões em High-Definition', 'Resistente à água', 'Opções de borboletas douradas', 'Comprimento até a cintura']
+    features: ['Mechas cacheadas macias', 'Sensação ultraleve', 'Visual moderno e chique', 'Alta durabilidade']
   },
   {
     id: 'nago-ponytail-gold',
-    name: 'Trança Nagô com Rabo de Cavalo VIP',
+    name: 'Rabo de Cavalo com Tranças Nagô & Presilhas',
     category: 'tradicionais',
-    description: 'Tranças rasteiras em padrões geométricos convergindo em um rabo de cavalo elevado e imponente com adereços dourados.',
-    image: '/src/assets/images/ulili_ponytail_braids_1793213133411.jpg',
+    description: 'Nagô feed-in rasteira desenhada na cabeça culminando em um rabo de cavalo alto e majestoso adornado com presilhas e anéis dourados.',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=1200',
     duration: '2.5h - 3.5h',
     priceEstimate: 'A partir de 280 MAD',
     recommendedHairType: 'Cabelos curtos a médios',
     maintenanceWeeks: '4 a 6 semanas',
     popularWithExtensions: true,
-    features: ['Visual elegante para eventos', 'Execução rápida', 'Firmeza e conforto', 'Fácil higienização']
+    features: ['Penteado imponente para eventos', 'Presilhas metálicas douradas', 'Firmeza e conforto', 'Fácil manutenção']
   },
   {
-    id: 'knotless-braids',
+    id: 'box-braids-beads',
+    name: 'Box Braids com Miçangas & Anéis Dourados',
+    category: 'tradicionais',
+    description: 'Box braids tradicionais divididas em quadrados geométricos perfeitos, com alongamento e miçangas/anéis distribuídos ao longo das tranças.',
+    image: 'https://images.unsplash.com/photo-1584297091622-af8e5ad1f6a1?auto=format&fit=crop&q=80&w=1200',
+    duration: '4h - 6h',
+    priceEstimate: 'A partir de 380 MAD',
+    recommendedHairType: 'Todos os tipos de fios',
+    maintenanceWeeks: '8 a 10 semanas',
+    popularWithExtensions: true,
+    features: ['Quadrados simétricos HD', 'Resistente à água', 'Comprimento personalizado', 'Acabamento duradouro']
+  },
+  {
+    id: 'knotless-braids-natural',
     name: 'Knotless Braids (Tranças Sem Nó)',
     category: 'alongamento',
-    description: 'Tranças sem nó na raiz, proporcionando zero dor de tração e caimento 100% natural desde o primeiro dia. Leveza absoluta.',
-    image: '/src/assets/images/ulili_box_braids_1793213132698.jpg',
+    description: 'Tranças sem nó na raiz para zero dor de tração, caimento 100% leve e movimento natural desde o primeiro dia de trançado.',
+    image: 'https://images.unsplash.com/photo-1570158268183-d296b2892211?auto=format&fit=crop&q=80&w=1200',
     duration: '4.5h - 6h',
     priceEstimate: 'A partir de 400 MAD',
     recommendedHairType: 'Couro cabeludo sensível',
     maintenanceWeeks: '6 a 8 semanas',
     popularWithExtensions: true,
-    features: ['Zero dor na raiz', 'Movimento natural 360°', 'Ideal para couro sensível', 'Alongamento ultraleve']
+    features: ['Zero dor na raiz', 'Flexibilidade total para coques', 'Proteção do couro cabeludo', 'Fios sintéticos premium']
   },
   {
-    id: 'nago-desenhada',
-    name: 'Nagô Artística & Desenhos Geométricos',
+    id: 'nago-desenhada-arte',
+    name: 'Trança Nagô de Raiz com Desenho Geométrico',
     category: 'tradicionais',
-    description: 'Tranças rasteiras desenhadas com linhas onduladas, corações ou zigue-zague personalizado. Arte pura em tranças.',
-    image: '/public/assets/aistudio/WhatsApp_Image_2026-10-28_at_19.42.31_a52be956.jpeg',
+    description: 'Tranças de raiz trançadas rente ao couro cabeludo em desenhos exclusivos de curvas e geométricos com acabamento impecável.',
+    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=1200',
     duration: '2h - 3h',
     priceEstimate: 'A partir de 250 MAD',
-    recommendedHairType: 'Cabelos curtos ou médios',
+    recommendedHairType: 'Cabelos curtos e médios',
     maintenanceWeeks: '3 a 5 semanas',
     popularWithExtensions: false,
-    features: ['Designs exclusivos personalizados', 'Excelente para o dia a dia', 'Opções com/sem extensão', 'Secagem rápida']
+    features: ['Desenhos artísticos únicos', 'Leveza imediata', 'Opção com/sem extensão', 'Secagem rápida']
+  },
+  {
+    id: 'butterfly-ponytail',
+    name: 'Trança Nagô com Borboletas Douradas',
+    category: 'modernas',
+    description: 'Visual romântico e glamouroso com tranças de raiz e borboletas metálicas douradas aplicadas ao longo das tranças.',
+    image: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=1200',
+    duration: '3h - 4h',
+    priceEstimate: 'A partir de 320 MAD',
+    recommendedHairType: 'Todos os tipos de cabelo',
+    maintenanceWeeks: '5 a 7 semanas',
+    popularWithExtensions: true,
+    features: ['Borboletas douradas', 'Design encantador', 'Modelagem de baby hair', 'Extensão de qualidade']
   }
 ];
 
 export const EXTENSION_OPTIONS: HairExtensionOption[] = [
   {
     id: 'sintetico-jumbo',
-    name: 'Fibra Sintética Jumbo Premium',
+    name: 'Cabelo Sintético Jumbo Premium',
     type: 'Sintético Premium',
-    description: 'Fibras macias de alta resistência ao calor, selagem perfeita em água quente e acabamento aveludado.',
+    description: 'Fibras macias de alta resistência ao calor, selagem perfeita em água quente e toque suave.',
     durability: '2 a 3 meses',
     priceModifier: 1.0
   },
@@ -156,15 +170,15 @@ export const EXTENSION_OPTIONS: HairExtensionOption[] = [
     id: 'cabelo-organico',
     name: 'Fibra Orgânica Super Soft',
     type: 'Orgânico',
-    description: 'Textura extremamente parecida com cabelo humano, super leve, macia e com brilho natural sedoso.',
+    description: 'Textura ultraleve parecida com cabelo humano, caimento fluido e brilho natural.',
     durability: '2 a 3 meses',
     priceModifier: 1.25
   },
   {
     id: 'cabelo-natural-humano',
-    name: 'Cabelo Humano Natural 100%',
+    name: 'Cabelo Natural 100% Humano',
     type: 'Cabelo Natural',
-    description: 'Fios 100% humanos selecionados para acabamento de altíssimo padrão, toque idêntico ao natural e durabilidade estendida.',
+    description: 'Fios 100% humanos selecionados para acabamento de altíssimo padrão e durabilidade prolongada.',
     durability: '6 meses a 1 ano (reutilizável)',
     priceModifier: 1.8
   }
@@ -185,7 +199,7 @@ export const REVIEWS: ReviewItem[] = [
     clientName: 'Fatima Zohra',
     styleDone: 'Fulani de Luxo com Acessórios',
     rating: 5,
-    comment: 'Minhas tranças duraram mais de 2 meses intactas. Os anéis dourados e as miçangas deram um toque real. Super recomendo a toda a gente!',
+    comment: 'Minhas tranças duraram mais de 2 meses intactas. Os anéis dourados e as miçangas deram um toque real. Super recomendo!',
     date: 'Há 3 dias',
     location: 'El Kheir'
   },
@@ -203,12 +217,12 @@ export const REVIEWS: ReviewItem[] = [
 export const CARE_TIPS: CareTip[] = [
   {
     title: 'Higienização do Couro Cabeludo',
-    subtitle: 'Lave suavemente sem esfregar as tranças',
+    subtitle: 'Lave suavemente mantendo a higiene',
     icon: 'Droplets',
     points: [
       'Dilua o xampu neutro em água antes de aplicar na raiz.',
-      'Massaje o couro cabeludo suavemente com as gemas dos dedos.',
-      'Enxágue abundantemente com água morna para fria.'
+      'Massaje o couro cabeludo suavemente com a ponta dos dedos.',
+      'Enxágue bem com água morna para fria.'
     ]
   },
   {
@@ -216,19 +230,19 @@ export const CARE_TIPS: CareTip[] = [
     subtitle: 'Touca ou fronha de cetim é fundamental',
     icon: 'Moon',
     points: [
-      'Utilize touca de cetim todas as noites para evitar o atrito e o frizz.',
-      'Evite dormir com as tranças úmidas para manter a higiene do couro cabeludo.',
-      'Penteie as pontas cacheadas das Boho Braids com óleo leve.'
+      'Utilize touca de cetim para evitar atrito e frizz nas tranças.',
+      'Evite dormir com as tranças molhadas.',
+      'Penteie delicadamente as pontas cacheadas das Boho Braids.'
     ]
   },
   {
     title: 'Hidratação & Brilho',
-    subtitle: 'Mantenha a raiz saudável e nutridas',
+    subtitle: 'Mantenha a raiz saudável e nutrida',
     icon: 'Sparkles',
     points: [
-      'Alique tônico fortalecedor ou óleo vegetal leve no couro 2x por semana.',
-      'Evite pomadas pesadas nas tranças já prontas.',
-      'Aplique spray hidratante leve nas extensões orgânicas.'
+      'Aplique tônico fortalecedor ou óleo vegetal leve na raiz 2x por semana.',
+      'Evite pomadas muito pesadas nas tranças prontas.',
+      'Mantenha as pontas das extensões hidratadas.'
     ]
   }
 ];

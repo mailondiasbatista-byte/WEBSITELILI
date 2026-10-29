@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Clock, Eye, Calendar, Check, X, Heart } from 'lucide-react';
+import { Sparkles, Clock, Eye, Calendar, Check, X } from 'lucide-react';
 import { BRAID_STYLES } from '../data/salonData';
 import { BraidStyle, CategoryType } from '../types';
 
@@ -19,38 +19,38 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
   });
 
   return (
-    <section id="estilos" className="py-24 bg-[#0E080D] relative">
+    <section id="estilos" className="py-24 bg-[#0A0407] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-950/50 border border-rose-500/30 text-rose-200 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-950/80 text-rose-200 text-xs font-bold tracking-wider uppercase shadow-lg">
             <Sparkles className="w-3.5 h-3.5 text-rose-400" />
-            <span>Catálogo & Galeria de Fotos</span>
+            <span>Galeria de Estilos Reais do Salão</span>
           </div>
           <h2 className="font-cinzel text-3xl sm:text-5xl font-extrabold text-white">
-            Escolha O Seu <span className="text-rosegold-gradient">Estilo de Trança</span>
+            Modelos de <span className="text-rosegold-gradient">Tranças & Penteados</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
-            Do clássico ao contemporâneo, personalizamos o tom, o comprimento e os adereços conforme o seu gosto.
+            Inspire-se nos estilos criados para valorizar a beleza e a autoestima das nossas clientes em El Kheir.
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
           {[
             { id: 'todas', label: 'Todas as Tranças' },
-            { id: 'tradicionais', label: 'Tranças Tradicionais' },
-            { id: 'modernas', label: 'Tranças Modernas (Boho/Fulani)' },
+            { id: 'tradicionais', label: 'Tranças Tradicionais (raiz, box braids, nagô)' },
+            { id: 'modernas', label: 'Tranças Modernas (boho, goddess, fulani)' },
             { id: 'alongamento', label: 'Com Alongamento' }
           ].map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as CategoryType)}
-              className={`px-5 py-2.5 text-xs font-bold rounded-xl transition-all whitespace-nowrap shrink-0 relative ${
+              className={`px-5 py-3 text-xs font-bold rounded-2xl transition-all whitespace-nowrap shrink-0 ${
                 activeCategory === cat.id
-                  ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-lg shadow-rose-500/30'
-                  : 'bg-zinc-950/80 text-slate-300 border border-zinc-800 hover:border-rose-500/40'
+                  ? 'bg-gradient-to-r from-rose-500 to-pink-600 text-white shadow-xl shadow-rose-500/30'
+                  : 'bg-zinc-950 text-slate-300 hover:bg-zinc-900 shadow-md'
               }`}
             >
               {cat.label}
@@ -58,7 +58,7 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
           ))}
         </div>
 
-        {/* Style Cards Grid */}
+        {/* Gallery Grid */}
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -72,53 +72,53 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
                 key={style.id}
-                className="group rounded-3xl bg-zinc-950/80 border border-rose-500/20 hover:border-rose-400/60 overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xl"
+                className="group rounded-3xl bg-zinc-950/90 overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-2xl hover:shadow-rose-950/40"
               >
                 <div>
-                  {/* Photo Frame */}
+                  {/* Image Frame */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-black cursor-pointer" onClick={() => setSelectedStyleModal(style)}>
                     <img
                       src={style.image}
                       alt={style.name}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     
                     {/* Category Pill */}
-                    <span className="absolute top-3 left-3 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-200 bg-black/80 border border-rose-500/40 rounded-lg backdrop-blur-md">
+                    <span className="absolute top-3 left-3 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-rose-200 bg-black/80 rounded-xl backdrop-blur-md shadow-lg">
                       {style.category === 'modernas' ? 'Moderna' : style.category === 'tradicionais' ? 'Tradicional' : 'Alongamento'}
                     </span>
 
-                    {/* Quick View */}
+                    {/* Expand Button */}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedStyleModal(style);
                       }}
-                      className="absolute top-3 right-3 p-2 rounded-full bg-black/70 border border-rose-400/40 text-rose-300 hover:text-white transition-colors"
+                      className="absolute top-3 right-3 p-2 rounded-full bg-black/80 text-rose-300 hover:text-white transition-colors shadow-lg"
                       title="Ampliar Foto"
                     >
                       <Eye className="w-4 h-4" />
                     </button>
 
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-rose-200 font-medium">
-                      <span className="flex items-center gap-1.5 bg-black/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-zinc-800">
+                      <span className="flex items-center gap-1.5 bg-black/80 px-3 py-1 rounded-xl backdrop-blur-sm shadow-md">
                         <Clock className="w-3.5 h-3.5 text-rose-400" />
                         {style.duration}
                       </span>
-                      <span className="bg-rose-950/90 border border-rose-500/50 text-rose-200 px-2.5 py-1 rounded-lg font-bold">
+                      <span className="bg-rose-950/90 text-rose-200 px-3 py-1 rounded-xl font-bold shadow-md">
                         {style.priceEstimate}
                       </span>
                     </div>
                   </div>
 
-                  {/* Details */}
+                  {/* Card Content */}
                   <div className="p-6 space-y-3">
-                    <h3 className="font-cinzel text-xl font-bold text-white group-hover:text-rose-300 transition-colors">
+                    <h3 className="font-cinzel text-xl font-extrabold text-white group-hover:text-rose-300 transition-colors">
                       {style.name}
                     </h3>
 
-                    <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-300 leading-relaxed">
                       {style.description}
                     </p>
 
@@ -133,16 +133,16 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
                   </div>
                 </div>
 
-                {/* CTA */}
+                {/* Card CTA */}
                 <div className="p-6 pt-0">
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => onSelectStyleForBooking(style)}
-                    className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:from-rose-600 hover:to-pink-500 rounded-xl transition-all shadow-lg shadow-rose-500/20 flex items-center justify-center gap-2"
+                    className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:from-rose-600 hover:to-pink-500 rounded-2xl transition-all shadow-xl shadow-rose-500/20 flex items-center justify-center gap-2"
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>Agendar Este Estilo</span>
+                    <span>Agender este estilo</span>
                   </motion.button>
                 </div>
               </motion.div>
@@ -165,16 +165,16 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="relative max-w-2xl w-full bg-[#12080E] border border-rose-500/40 rounded-3xl overflow-hidden shadow-2xl space-y-4 p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
+              className="relative max-w-2xl w-full bg-[#12070E] rounded-3xl overflow-hidden shadow-2xl space-y-4 p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedStyleModal(null)}
-                className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-zinc-900 border border-zinc-800"
+                className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-zinc-900"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-rose-500/20">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src={selectedStyleModal.image}
                   alt={selectedStyleModal.name}
@@ -183,7 +183,7 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
               </div>
 
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-rose-300 bg-rose-950/80 border border-rose-500/30 px-3 py-1 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-rose-300 bg-rose-950 px-3 py-1 rounded-md">
                   {selectedStyleModal.category}
                 </span>
                 <h3 className="font-cinzel text-2xl font-bold text-rose-100 mt-2">
@@ -194,7 +194,7 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 text-xs text-slate-300 bg-zinc-950 p-4 rounded-2xl border border-zinc-900">
+              <div className="grid grid-cols-2 gap-3 text-xs text-slate-300 bg-zinc-950 p-4 rounded-2xl">
                 <div>
                   <span className="text-slate-400 block">Duração Estimada:</span>
                   <strong className="text-rose-300">{selectedStyleModal.duration}</strong>
@@ -226,7 +226,7 @@ export const BraidCatalog: React.FC<BraidCatalogProps> = ({ onSelectStyleForBook
                     setSelectedStyleModal(null);
                     onSelectStyleForBooking(style);
                   }}
-                  className="px-6 py-3 text-xs font-bold text-white uppercase bg-rose-600 hover:bg-rose-500 rounded-xl shadow-lg"
+                  className="px-6 py-3 text-xs font-bold text-white uppercase bg-rose-600 hover:bg-rose-500 rounded-2xl shadow-lg"
                 >
                   Continuar Agendamento
                 </button>

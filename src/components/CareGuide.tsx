@@ -5,11 +5,11 @@ import { CARE_TIPS } from '../data/salonData';
 
 export const CareGuide: React.FC = () => {
   return (
-    <section className="py-24 bg-[#090508] relative border-t border-rose-500/20">
+    <section className="py-24 bg-[#070305] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-950/50 border border-rose-500/30 text-rose-200 text-xs font-semibold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-950/80 text-rose-200 text-xs font-bold tracking-wider uppercase shadow-lg">
             <HeartHandshake className="w-3.5 h-3.5 text-rose-400" />
             <span>Guia de Cuidados Pós-Trançado</span>
           </div>
@@ -17,7 +17,7 @@ export const CareGuide: React.FC = () => {
             Como Manter Suas <span className="text-rosegold-gradient">Tranças Sempre Lindas</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
-            Dicas essenciais das nossas trancistas profissionais em El Kheir para máxima durabilidade e proteção dos seus fios.
+            Dicas essenciais para manter o acabamento impecável e proteger a saúde do seu cabelo em El Kheir.
           </p>
         </div>
 
@@ -30,16 +30,16 @@ export const CareGuide: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               whileHover={{ y: -5 }}
-              className="p-6 rounded-3xl bg-zinc-950/70 border border-rose-500/20 hover:border-rose-400/50 transition-all space-y-4 shadow-xl"
+              className="p-7 rounded-3xl bg-zinc-950/90 space-y-4 shadow-2xl"
             >
-              <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-rose-500/15 flex items-center justify-center">
                 {idx === 0 && <Droplets className="w-6 h-6 text-rose-300" />}
                 {idx === 1 && <Moon className="w-6 h-6 text-rose-300" />}
                 {idx === 2 && <Sparkles className="w-6 h-6 text-rose-300" />}
               </div>
 
               <div>
-                <h3 className="font-cinzel text-xl font-bold text-rose-100">
+                <h3 className="font-cinzel text-xl font-extrabold text-rose-100">
                   {tip.title}
                 </h3>
                 <p className="text-xs font-semibold text-rose-300/90 mt-1">
@@ -47,7 +47,7 @@ export const CareGuide: React.FC = () => {
                 </p>
               </div>
 
-              <ul className="space-y-2.5 text-xs text-slate-300 border-t border-zinc-900 pt-4">
+              <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
                 {tip.points.map((pt, pIdx) => (
                   <li key={pIdx} className="flex items-start gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0 mt-1.5" />

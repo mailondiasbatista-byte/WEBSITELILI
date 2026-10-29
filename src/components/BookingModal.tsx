@@ -74,27 +74,27 @@ Aguardando a confirmação do horário! Obrigado!`;
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-          className="relative max-w-xl w-full bg-[#12080E] border border-rose-500/40 rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto"
+          className="relative max-w-xl w-full bg-[#12070E] rounded-3xl overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto"
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-zinc-900 border border-zinc-800 transition-colors"
+            className="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-zinc-900 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Modal Header */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-rose-500/15 border border-rose-500/30 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center">
               <Crown className="w-5 h-5 text-rose-300" />
             </div>
             <div>
               <h2 className="font-cinzel text-xl sm:text-2xl font-bold text-rose-100">
-                Agendar Horário — El Kheir
+                Agende já o seu horário!
               </h2>
               <p className="text-xs text-slate-400">
-                Preencha os dados e confirme via WhatsApp diretamente.
+                Salão Ulili Tranças em El Kheir • Contato: {SALON_INFO.phone}
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ Aguardando a confirmação do horário! Obrigado!`;
                 <select
                   value={selectedStyleId}
                   onChange={(e) => setSelectedStyleId(e.target.value)}
-                  className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                  className="w-full px-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                 >
                   {BRAID_STYLES.map((s) => (
                     <option key={s.id} value={s.id}>
@@ -131,10 +131,10 @@ Aguardando a confirmação do horário! Obrigado!`;
                       type="button"
                       key={ext.id}
                       onClick={() => setExtensionType(ext.name)}
-                      className={`p-2.5 rounded-xl border text-left text-xs font-medium transition-all ${
+                      className={`p-3 rounded-2xl text-left text-xs font-medium transition-all ${
                         extensionType === ext.name
-                          ? 'bg-rose-950/80 border-rose-400 text-rose-100 font-bold'
-                          : 'bg-zinc-950/60 border-zinc-800 text-slate-400'
+                          ? 'bg-rose-950 text-rose-100 font-bold shadow-md'
+                          : 'bg-zinc-950 text-slate-400'
                       }`}
                     >
                       {ext.name}
@@ -155,7 +155,7 @@ Aguardando a confirmação do horário! Obrigado!`;
                     value={selectedDate}
                     min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setSelectedDate(e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                    className="w-full px-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                     required
                   />
                 </div>
@@ -168,7 +168,7 @@ Aguardando a confirmação do horário! Obrigado!`;
                   <select
                     value={selectedTimeSlot}
                     onChange={(e) => setSelectedTimeSlot(e.target.value)}
-                    className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                    className="w-full px-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                   >
                     {TIME_SLOTS.map((slot) => (
                       <option key={slot} value={slot}>
@@ -186,13 +186,13 @@ Aguardando a confirmação do horário! Obrigado!`;
                     Seu Nome Completo:
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
+                    <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
                     <input
                       type="text"
                       placeholder="Ex: Amina"
                       value={clientName}
                       onChange={(e) => setClientName(e.target.value)}
-                      className="w-full pl-9 pr-4 py-3 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                      className="w-full pl-10 pr-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                       required
                     />
                   </div>
@@ -203,13 +203,13 @@ Aguardando a confirmação do horário! Obrigado!`;
                     Telefone / WhatsApp:
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-500 absolute left-3 top-3.5" />
+                    <Phone className="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" />
                     <input
                       type="tel"
-                      placeholder="Ex: 0718474093"
+                      placeholder="Ex: +212 719 684 150"
                       value={clientPhone}
                       onChange={(e) => setClientPhone(e.target.value)}
-                      className="w-full pl-9 pr-4 py-3 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                      className="w-full pl-10 pr-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                       required
                     />
                   </div>
@@ -223,10 +223,10 @@ Aguardando a confirmação do horário! Obrigado!`;
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="Ex: Gostaria de colocar anéis dourados e presilhas de borboleta..."
+                  placeholder="Ex: Anéis dourados e presilhas de borboleta..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-rose-400"
+                  className="w-full px-4 py-3 bg-zinc-950 rounded-2xl text-xs sm:text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                 />
               </div>
 
@@ -244,25 +244,25 @@ Aguardando a confirmação do horário! Obrigado!`;
           ) : (
             /* Confirmation State */
             <div className="text-center space-y-6 py-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center mx-auto text-emerald-400 animate-bounce">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto text-emerald-400 animate-bounce">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
 
               <div className="space-y-2">
                 <h3 className="font-cinzel text-2xl font-bold text-rose-100">
-                  Pré-Agendamento Criado!
+                  Pré-Agendamento Concluído!
                 </h3>
                 <p className="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
-                  Clique abaixo para enviar a solicitação diretamente ao WhatsApp no <strong className="text-rose-300">{SALON_INFO.phone}</strong> em El Kheir.
+                  Clique abaixo para enviar a confirmação para o WhatsApp <strong className="text-rose-300">{SALON_INFO.phone}</strong> em El Kheir.
                 </p>
               </div>
 
-              <div className="bg-zinc-950 p-4 rounded-2xl border border-zinc-900 text-left text-xs space-y-2 text-slate-300 max-w-md mx-auto">
+              <div className="bg-zinc-950 p-5 rounded-2xl text-left text-xs space-y-2 text-slate-300 max-w-md mx-auto shadow-inner">
                 <p><strong>Cliente:</strong> {clientName}</p>
                 <p><strong>Estilo:</strong> {currentStyle.name}</p>
                 <p><strong>Alongamento:</strong> {extensionType}</p>
                 <p><strong>Data & Horário:</strong> {selectedDate} às {selectedTimeSlot}h</p>
-                <p><strong>Local:</strong> El Kheir</p>
+                <p><strong>Localização:</strong> El Kheir</p>
               </div>
 
               <button

@@ -16,16 +16,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="sticky top-0 z-40 bg-[#0D070B]/90 backdrop-blur-md border-b border-rose-500/20"
+      className="sticky top-0 z-40 bg-[#0A0407]/95 backdrop-blur-md shadow-lg shadow-black/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
         
-        {/* Zone 1: Single Brand Wordmark */}
+        {/* Brand Wordmark */}
         <a href="#" className="flex items-center gap-3 group whitespace-nowrap shrink-0">
           <motion.div
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-            className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-600 via-rose-400 to-amber-200 p-0.5 shadow-lg shadow-rose-500/25"
+            className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-600 via-rose-400 to-amber-300 p-0.5 shadow-lg shadow-rose-500/25"
           >
             <div className="w-full h-full bg-[#12070E] rounded-full flex items-center justify-center">
               <Crown className="w-5 h-5 text-rose-300 animate-rosegold-glow" />
@@ -38,12 +38,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
             </span>
             <span className="text-[10px] tracking-widest text-rose-300/80 uppercase font-bold flex items-center gap-1">
               <Sparkles className="w-2.5 h-2.5 text-rose-400" />
-              Studio VIP & Alongamento
+              El Kheir • Studio VIP
             </span>
           </div>
         </a>
 
-        {/* Zone 2: 4-5 Nav Links */}
+        {/* Nav Links */}
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-200">
           <a href="#estilos" className="hover:text-rose-300 transition-colors whitespace-nowrap shrink-0">
             Estilos & Galeria
@@ -61,14 +61,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onOpenFlyerModal}
-            className="flex items-center gap-1.5 text-xs text-rose-200/90 hover:text-rose-100 bg-rose-950/40 border border-rose-500/30 px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0"
+            className="flex items-center gap-1.5 text-xs text-rose-200/90 hover:text-rose-100 bg-rose-950/60 px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 shadow-md"
           >
             <FileImage className="w-3.5 h-3.5 text-rose-400" />
             <span>Ver Panfleto</span>
           </motion.button>
         </nav>
 
-        {/* Zone 3: Single Primary Action */}
+        {/* Primary Action */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <motion.a
             whileHover={{ scale: 1.08 }}
@@ -76,8 +76,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
             href={`https://wa.me/${SALON_INFO.whatsappRaw}?text=${encodeURIComponent('Olá Ulili Tranças! Gostaria de agendar um horário em El Kheir.')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 text-emerald-400 bg-emerald-950/50 border border-emerald-500/40 hover:border-emerald-400 rounded-xl transition-all shadow-md"
-            title="Contato WhatsApp"
+            className="p-2.5 text-emerald-400 bg-emerald-950/60 hover:bg-emerald-900/80 rounded-xl transition-all shadow-md"
+            title="Contato WhatsApp (+212 719 684 150)"
           >
             <MessageCircle className="w-5 h-5" />
           </motion.a>
@@ -86,10 +86,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-2 px-6 py-2.5 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:from-rose-600 hover:to-pink-500 rounded-xl shadow-lg shadow-rose-500/30 transition-all whitespace-nowrap shrink-0 uppercase"
+            className="flex items-center gap-2 px-6 py-2.5 text-xs font-bold tracking-wider text-white bg-gradient-to-r from-rose-500 via-rose-600 to-pink-600 hover:from-rose-600 hover:to-pink-500 rounded-xl shadow-xl shadow-rose-500/25 transition-all whitespace-nowrap shrink-0 uppercase"
           >
             <Calendar className="w-4 h-4" />
-            <span>Agender Horário</span>
+            <span>Agende já o seu horário!</span>
           </motion.button>
         </div>
 
@@ -112,14 +112,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
 
       </div>
 
-      {/* Mobile Drawer with AnimatePresence */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-[#12080F] border-b border-rose-500/20 px-5 py-6 space-y-4 overflow-hidden"
+            className="md:hidden bg-[#12070E] px-5 py-6 space-y-4 overflow-hidden shadow-2xl"
           >
             <a
               href="#estilos"
@@ -156,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
                   setMobileMenuOpen(false);
                   onOpenFlyerModal();
                 }}
-                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-rose-200 bg-rose-950/50 border border-rose-500/30 rounded-xl"
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-semibold text-rose-200 bg-rose-950/70 rounded-xl shadow-sm"
               >
                 <FileImage className="w-4 h-4 text-rose-400" />
                 <span>Ver Panfleto Oficial Original</span>
@@ -166,7 +166,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onOpenFlyerModal 
                 href={`https://wa.me/${SALON_INFO.whatsappRaw}?text=${encodeURIComponent('Olá Ulili Tranças! Gostaria de agendar um horário em El Kheir.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 text-xs font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 rounded-xl"
+                className="flex items-center justify-center gap-2 w-full py-3 text-xs font-bold text-emerald-300 bg-emerald-950/70 rounded-xl shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" />
                 <span>WhatsApp: {SALON_INFO.phone}</span>
